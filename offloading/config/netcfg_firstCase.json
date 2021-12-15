@@ -1,0 +1,48 @@
+{
+  "devices": {
+    "device:sw1": {
+        "basic": {
+            "managementAddress": "grpc://mininet:50001?device_id=1",
+            "driver": "stratum-bmv2",
+            "pipeconf": "org.onosproject.zenoh_pipeline_extension.fabric",
+            "locType": "grid",
+            "gridX": 200,
+            "gridY": 800
+        },
+        "segmentrouting": {
+            "name": "sw1",
+            "ipv4NodeSid": 101,
+            "ipv4Loopback": "192.168.1.1",
+            "routerMac": "00:aa:00:00:00:01",
+            "isEdgeRouter": true,
+            "adjacencySids": []
+        }
+    }
+  },
+  "ports": {
+    "device:sw1/1": {
+      "interfaces": [
+        {
+          "name": "sw1-eth0",
+          "ips": [
+            "10.0.1.100/24"
+          ],
+          "vlan-untagged" : 10
+        }
+      ]
+    },
+    "device:sw1/2": {
+      "interfaces": [
+        {
+          "name": "sw1-eth2",
+          "ips": [
+            "10.0.2.100/24"
+          ],
+          "vlan-untagged" : 20
+        }
+      ]
+    }
+
+  }
+}
+
