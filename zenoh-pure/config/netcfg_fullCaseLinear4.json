@@ -1,0 +1,199 @@
+{
+  "devices": {
+    "device:sw1": {
+        "basic": {
+            "managementAddress": "grpc://mininet:50001?device_id=1",
+            "driver": "stratum-bmv2",
+            "pipeconf": "org.onosproject.zenoh_pipeline_extension.fabric",
+            "locType": "grid",
+            "gridX": 50,
+            "gridY": 800
+        },
+        "segmentrouting": {
+            "name": "sw1",
+            "ipv4NodeSid": 101,
+            "ipv4Loopback": "192.168.1.1",
+            "routerMac": "00:aa:00:00:00:01",
+            "isEdgeRouter": true,
+            "adjacencySids": []
+        }
+    },
+    "device:sw2": {
+        "basic": {
+            "managementAddress": "grpc://mininet:50002?device_id=1",
+            "driver": "stratum-bmv2",
+            "pipeconf": "org.onosproject.zenoh_pipeline_extension.fabric",
+            "locType": "grid",
+            "gridX": 100,
+            "gridY": 800
+        },
+        "segmentrouting": {
+            "name": "sw2",
+            "ipv4NodeSid": 102,
+            "ipv4Loopback": "192.168.1.2",
+            "routerMac": "00:aa:00:00:00:02",
+            "isEdgeRouter": false,
+            "adjacencySids": []
+        }
+    },
+    "device:sw3": {
+        "basic": {
+            "managementAddress": "grpc://mininet:50003?device_id=1",
+            "driver": "stratum-bmv2",
+            "pipeconf": "org.onosproject.zenoh_pipeline_extension.fabric",
+            "locType": "grid",
+            "gridX": 1000,
+            "gridY": 800
+        },
+        "segmentrouting": {
+            "name": "sw3",
+            "ipv4NodeSid": 103,
+            "ipv4Loopback": "192.168.1.3",
+            "routerMac": "00:aa:00:00:00:03",
+            "isEdgeRouter": true,
+            "adjacencySids": []
+        }
+    },
+    "device:sw4": {
+        "basic": {
+            "managementAddress": "grpc://mininet:50004?device_id=1",
+            "driver": "stratum-bmv2",
+            "pipeconf": "org.onosproject.zenoh_pipeline_extension.fabric",
+            "locType": "grid",
+            "gridX": 150,
+            "gridY": 800
+        },
+        "segmentrouting": {
+            "name": "sw4",
+            "ipv4NodeSid": 104,
+            "ipv4Loopback": "192.168.1.4",
+            "routerMac": "00:aa:00:00:00:04",
+            "isEdgeRouter": false,
+            "adjacencySids": []
+        }
+    }
+  },
+  "ports": {
+    "device:sw1/1": {
+      "interfaces": [
+        {
+          "name": "sw1-eth1",
+          "ips": [
+            "10.0.1.100/24"
+          ],
+          "vlan-untagged" : 10
+        }
+      ]
+    },
+    "device:sw1/2": {
+      "interfaces": [
+        {
+          "name": "sw1-eth2",
+          "ips": [
+            "10.0.1.101/24"
+          ],
+          "vlan-untagged" : 10
+        }
+      ]
+    },
+    "device:sw1/3": {
+      "interfaces": [
+        {
+          "name": "sw1-eth3",
+          "ips": [
+            "10.0.1.102/24"
+          ],
+          "vlan-untagged" : 10
+        }
+      ]
+    },
+    "device:sw1/4": {
+      "interfaces": [
+        {
+          "name": "sw1-eth4",
+          "ips": [
+            "10.0.1.103/24"
+          ],
+          "vlan-untagged" : 10
+        }
+      ]
+    },
+    "device:sw1/5": {
+      "interfaces": [
+        {
+          "name": "sw1-eth5",
+          "ips": [
+            "10.0.1.104/24"
+          ],
+          "vlan-untagged" : 10
+        }
+      ]
+    },
+    "device:sw1/6": {
+      "interfaces": [
+        {
+          "name": "sw1-eth6",
+          "ips": [
+            "10.0.3.100/24"
+          ],
+          "vlan-untagged" : 10
+        }
+      ]
+    },
+    "device:sw3/1": {
+      "interfaces": [
+        {
+          "name": "sw3-eth1",
+          "ips": [
+            "10.0.2.100/24"
+          ],
+          "vlan-untagged" : 20
+        }
+      ]
+    },
+    "device:sw3/2": {
+      "interfaces": [
+        {
+          "name": "sw3-eth2",
+          "ips": [
+            "10.0.2.101/24"
+          ],
+          "vlan-untagged" : 20
+        }
+      ]
+    },
+    "device:sw3/3": {
+      "interfaces": [
+        {
+          "name": "sw3-eth3",
+          "ips": [
+            "10.0.2.102/24"
+          ],
+          "vlan-untagged" : 20
+        }
+      ]
+    },
+    "device:sw3/4": {
+      "interfaces": [
+        {
+          "name": "sw3-eth4",
+          "ips": [
+            "10.0.2.103/24"
+          ],
+          "vlan-untagged" : 20
+        }
+      ]
+    },
+    "device:sw3/5": {
+      "interfaces": [
+        {
+          "name": "sw3-eth5",
+          "ips": [
+            "10.0.2.104/24"
+          ],
+          "vlan-untagged" : 20
+        }
+      ]
+    }
+  }
+}

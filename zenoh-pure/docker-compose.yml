@@ -1,0 +1,52 @@
+version: "3.5"
+
+services:
+  mininet:
+    image: mn_stratum_pure_zenoh:custom
+    #hostname: mininet
+    container_name: mininet
+    privileged: true
+    tty: true
+    stdin_open: true
+    restart: always
+    volumes:
+      - ./tmp:/tmp
+      - ./mininet:/mininet
+    ports:
+      - "50001:50001"
+      - "50002:50002"
+      - "50003:50003"
+      - "50004:50004"
+      - "50005:50005"
+      - "50006:50006"
+      - "50007:50007"
+      - "50008:50008"
+      - "50009:50009"
+      - "50010:50010"
+      - "50011:50011"
+      - "50012:50012"
+      - "50013:50013"
+      - "50014:50014"
+      - "50015:50015"
+      - "50016:50016"
+      - "50017:50017"
+      - "50018:50018"
+      - "50019:50019"
+      - "50020:50020"
+    entrypoint: "/mininet/basic.py"
+      
+
+  onos:
+    image: onosproject/onos:2.2.7
+    hostname: onos
+    container_name: onos
+    ports:
+      - "8181:8181" # HTTP
+      - "8101:8101" # SSH (CLI)
+    volumes:
+      - ./tmp/onos:/root/onos/apache-karaf-4.2.8/data/tmp
+    environment:
+      - ONOS_APPS=gui2,drivers.bmv2,hostprovider, lldpprovider, pipelines.fabric, segmentrouting
+    links:
+      - mininet
+
